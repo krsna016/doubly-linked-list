@@ -1,5 +1,5 @@
 # Doubly Linked List (DLL) Implementation in Java
-![Alt text](https://example.com/path-to-your-image.png)
+![Alt text](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2014/03/DLL1.png)
 
 A comprehensive Java implementation of a Doubly Linked List with various operations.
 
@@ -42,4 +42,4 @@ Ensure that you have the Java Development Kit (JDK) and Git installed on your ma
 
 Run this into your command prompt / Terminal to clone the repository:
 ```bash
-git clone https://github.com/your-username/your-doubly-linked-list-repo.git
+git clone https://github.com/krsna016/doubly-linked-list.git
