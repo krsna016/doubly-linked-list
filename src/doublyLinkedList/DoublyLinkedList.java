@@ -1,31 +1,20 @@
-package list;
+package doublyLinkedList;
 
 import node.Node;
-import adt.AbstractClass;
 
-public class DoublyLinkedList implements AbstractClass {
+public class DoublyLinkedList {
+    Node head;
+    int size = 0;
+    Node tail;
 
-    public Node head;
-    public int size;
-    public Node tail;
-
-    public DoublyLinkedList() {
-        this.head = null;
-        this.size = 0;
-        this.tail = null;
-    }
-
-    @Override
     public boolean is_empty() {
         return size == 0;
     }
 
-    @Override
     public int get_size() {
         return size;
     }
 
-    @Override
     public void add_first(int data) {
         Node new_node = new Node(data);
         if (is_empty()) {
@@ -39,7 +28,6 @@ public class DoublyLinkedList implements AbstractClass {
         size++;
     }
 
-    @Override
     public void add_last(int data) {
         Node new_node = new Node(data);
         if (is_empty()) {
@@ -53,7 +41,6 @@ public class DoublyLinkedList implements AbstractClass {
         size++;
     }
 
-    @Override
     public void remove_first() {
         if (is_empty()) {
             tail = null;
@@ -66,7 +53,6 @@ public class DoublyLinkedList implements AbstractClass {
         size--;
     }
 
-    @Override
     public void remove_last() {
         if (is_empty())
             return;
@@ -81,7 +67,6 @@ public class DoublyLinkedList implements AbstractClass {
         size--;
     }
 
-    @Override
     public void print_forward(Node head_) {
         Node current_node = head_;
         while (current_node != null) {
@@ -91,7 +76,6 @@ public class DoublyLinkedList implements AbstractClass {
         System.out.println("null");
     }
 
-    @Override
     public void print_backward(Node tail_) {
         Node current_node = tail_;
         while (current_node != null) {
@@ -101,7 +85,6 @@ public class DoublyLinkedList implements AbstractClass {
         System.out.println("null");
     }
 
-    @Override
     public void add_any(int data, int position) {
         if (position < 1 || position > size) {
             throw new IllegalArgumentException("Invalid position");
@@ -127,7 +110,6 @@ public class DoublyLinkedList implements AbstractClass {
         size++;
     }
 
-    @Override
     public void remove_any(int position) {
         if (position < 1 || position > size) {
             throw new IllegalArgumentException("Invalid position");
@@ -157,7 +139,6 @@ public class DoublyLinkedList implements AbstractClass {
         size--;
     }
 
-    @Override
     public Node reverse(Node head_) {
         if (is_empty()) {
             head = null;
@@ -180,7 +161,6 @@ public class DoublyLinkedList implements AbstractClass {
         return head;
     }
 
-    @Override
     public boolean search_node(int data) {
         Node current_node = head;
         while (current_node != null) {
@@ -189,5 +169,21 @@ public class DoublyLinkedList implements AbstractClass {
             current_node = current_node.next;
         }
         return false;
+    }
+
+    static class Node {
+        Node previous;
+        int data;
+        Node next;
+
+        public Node(int data) {
+            this.previous = null;
+            this.data = data;
+            this.next = null;
+        }
+
+        public String toString() {
+            return "Node{" + "previous=" + (previous != null ? previous.data : "null") + ", data=" + data + ", next=" + (next != null ? next.data : "null") + "}";
+        }
     }
 }

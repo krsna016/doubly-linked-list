@@ -1,6 +1,6 @@
-package main;
+package doublyLinkedList;
 
-import list.DoublyLinkedList;
+import doublyLinkedList.DoublyLinkedList;
 
 public class Main {
     public static void main(String[] args) {
